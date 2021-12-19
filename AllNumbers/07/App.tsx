@@ -14,7 +14,7 @@ export type TodolistType = {
     filter: FilterValuesType
 
 }
-export type TaskStateType = {
+type TaskStateType = {
     [key: string]: Array<TaskType>
 }
 
@@ -51,7 +51,7 @@ function App() {
         setTasks({...tasks});
     }
 
-   function addTask(title: string, todolistId: string) {
+    function addTask(title: string, todolistId: string) {
         let newTask = { id: v1(), title: title, isDone: false };
         tasks[todolistId] = [newTask, ... tasks[todolistId]];
         setTasks({...tasks});
